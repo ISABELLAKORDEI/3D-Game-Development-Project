@@ -8,8 +8,7 @@ public class Blade : MonoBehaviour
 
     private Collider sliceCollider;
     private TrailRenderer sliceTrail;
-    public AudioSource fruitSlice;
-
+   
     public float sliceForce = 5f;
     public float minSliceVelocity = 0.01f;
 
@@ -32,16 +31,10 @@ public class Blade : MonoBehaviour
         StopSlice();
     }
 
-    public void PlayfruitSlice()
-    {
-        fruitSlice.Play();
-    }
-
     private void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
             StartSlice();
-            PlayfruitSlice();
         } else if (Input.GetMouseButtonUp(0)) {
             StopSlice();
         } else if (slicing) {

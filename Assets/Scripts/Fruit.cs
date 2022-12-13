@@ -8,6 +8,7 @@ public class Fruit : MonoBehaviour
     private Rigidbody fruitRigidbody;
     private Collider fruitCollider;
     private ParticleSystem juiceEffect;
+    public AudioSource fruitSlice;
 
     public int points = 1;
 
@@ -50,6 +51,7 @@ public class Fruit : MonoBehaviour
         {
             Blade blade = other.GetComponent<Blade>();
             Slice(blade.direction, blade.transform.position, blade.sliceForce);
+            fruitSlice.Play();
         }
     }
 
